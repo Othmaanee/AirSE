@@ -1,4 +1,3 @@
-
 import HeroSection from "../components/HeroSection";
 import ServiceCard from "../components/ServiceCard";
 import { Button } from "@/components/ui/button";
@@ -161,7 +160,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/services">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-airse-navy">
+              <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white hover:text-airse-navy">
                 En savoir plus
               </Button>
             </Link>
