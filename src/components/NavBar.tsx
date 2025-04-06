@@ -1,15 +1,35 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Function to handle smooth scrolling
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    // Only apply smooth scroll for internal links
+    if (location.pathname === to || (location.pathname === "/" && to === "/")) {
+      e.preventDefault();
+      
+      // If we're already on the page, scroll smoothly to top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -53,16 +73,31 @@ const NavBar = () => {
               
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center space-x-8">
-                <Link to="/" className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors">
+                <Link 
+                  to="/" 
+                  className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/")}
+                >
                   Accueil
                 </Link>
-                <Link to="/services" className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors">
+                <Link 
+                  to="/services" 
+                  className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/services")}
+                >
                   Nos Services
                 </Link>
-                <Link to="/produits" className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors">
+                <Link 
+                  to="/produits" 
+                  className="text-airse-navy font-medium hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/produits")}
+                >
                   Nos Produits
                 </Link>
-                <Link to="/contact">
+                <Link 
+                  to="/contact"
+                  onClick={(e) => handleNavigation(e, "/contact")}
+                >
                   <Button className="bg-airse-light-blue hover:bg-airse-blue text-white">
                     Contact
                   </Button>
@@ -87,27 +122,39 @@ const NavBar = () => {
                 <Link 
                   to="/" 
                   className="text-airse-navy font-medium py-2 px-2 hover:bg-gray-100 rounded"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavigation(e, "/");
+                    setIsOpen(false);
+                  }}
                 >
                   Accueil
                 </Link>
                 <Link 
                   to="/services" 
                   className="text-airse-navy font-medium py-2 px-2 hover:bg-gray-100 rounded"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavigation(e, "/services");
+                    setIsOpen(false);
+                  }}
                 >
                   Nos Services
                 </Link>
                 <Link 
                   to="/produits" 
                   className="text-airse-navy font-medium py-2 px-2 hover:bg-gray-100 rounded"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavigation(e, "/produits");
+                    setIsOpen(false);
+                  }}
                 >
                   Nos Produits
                 </Link>
                 <Link 
                   to="/contact"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavigation(e, "/contact");
+                    setIsOpen(false);
+                  }}
                 >
                   <Button className="bg-airse-light-blue hover:bg-airse-blue text-white w-full">
                     Contact
