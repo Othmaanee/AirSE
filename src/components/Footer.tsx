@@ -12,8 +12,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/logo-square.png" alt="Air SE" className="h-16 mr-3" />
-              <h2 className="text-2xl font-bold">Air SE</h2>
+              <img 
+                src="/lovable-uploads/43e620c6-bc7d-41cb-871c-3ef41c402554.png" 
+                alt="Air SE" 
+                className="h-16 mr-3" 
+              />
             </div>
             <p className="mb-4">
               Votre spécialiste en climatisation et ventilation. Installation, entretien et réparation de systèmes pour tous vos espaces.

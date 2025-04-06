@@ -44,7 +44,11 @@ const NavBar = () => {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <Link to="/" className="flex items-center">
-                <img src="/logo-airse.png" alt="Air SE" className="h-12 lg:h-16" />
+                <img 
+                  src="/lovable-uploads/43e620c6-bc7d-41cb-871c-3ef41c402554.png" 
+                  alt="Air SE" 
+                  className="h-14 lg:h-16" 
+                />
               </Link>
               
               {/* Desktop Navigation */}
