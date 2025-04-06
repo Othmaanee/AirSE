@@ -13,8 +13,7 @@ const HeroSection = () => {
               Solutions de climatisation et ventilation professionnelles
             </h1>
             <p className="text-lg text-gray-700 mb-8">
-              Spécialiste de l'installation, l'entretien et la réparation de systèmes de climatisation 
-              et ventilation pour le résidentiel, le commercial et le tertiaire à Saint-Étienne et sa région.
+              Spécialiste de l'installation, l'entretien et la réparation de systèmes de climatisation et ventilation pour le résidentiel, le commercial et le tertiaire à Saint-Étienne et sa région.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
@@ -32,8 +31,13 @@ const HeroSection = () => {
           </div>
           
           <div className="order-1 lg:order-2 flex justify-center">
-            <div className="text-right">
-              <h2 className="text-lg font-medium text-airse-navy">Air SE</h2>
+            <div className="relative">
+              <img 
+                src="/logo-square.png" 
+                alt="Air SE" 
+                className="w-48 md:w-64 lg:w-80 animate-float" 
+              />
+              <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl -z-10"></div>
             </div>
           </div>
         </div>
