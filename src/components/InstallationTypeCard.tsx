@@ -29,7 +29,6 @@ const InstallationTypeCard = ({
                   src={imageSrc}
                   alt={imageAlt}
                   className="h-full w-full object-cover"
-                  loading="lazy"
                 />
               </AspectRatio>
             </div>
