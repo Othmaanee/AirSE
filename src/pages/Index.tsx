@@ -1,5 +1,7 @@
+
 import HeroSection from "../components/HeroSection";
 import ServiceCard from "../components/ServiceCard";
+import InstallationTypeCard from "../components/InstallationTypeCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Airplay, Fan, ThermometerSnowflake, CheckCircle, ArrowRight } from "lucide-react";
@@ -25,6 +27,39 @@ const Index = () => {
       title: "Service après-vente",
       description: "Accompagnement complet avec maintenance régulière et support technique rapide.",
       icon: <CheckCircle className="h-6 w-6 text-airse-light-blue" />,
+    },
+  ];
+
+  const installationTypes = [
+    {
+      title: "Bi-split",
+      description: "Solution idéale pour climatiser deux pièces distinctes avec une seule unité extérieure, optimisant l'espace et réduisant les coûts d'installation.",
+      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
+      imageAlt: "Installation bi-split"
+    },
+    {
+      title: "Mono-split",
+      description: "Système simple et efficace pour climatiser une pièce unique, offrant un contrôle précis de la température et une installation rapide.",
+      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
+      imageAlt: "Installation mono-split"
+    },
+    {
+      title: "Installation gainable avec système Airzone",
+      description: "Solution discrète et performante permettant de climatiser plusieurs pièces avec un seul système, tout en offrant un contrôle individuel de la température par zone.",
+      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
+      imageAlt: "Installation gainable avec système Airzone"
+    },
+    {
+      title: "Système VRV",
+      description: "Technologie avancée de climatisation adaptée aux grands espaces, offrant une efficacité énergétique supérieure et une flexibilité d'installation incomparable.",
+      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
+      imageAlt: "Système VRV"
+    },
+    {
+      title: "Installation de système VRV avec plusieurs cassettes",
+      description: "Solution complète pour les grands espaces professionnels, permettant un contrôle précis de la température dans différentes zones avec un design discret au plafond.",
+      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
+      imageAlt: "Installation de système VRV avec plusieurs cassettes"
     },
   ];
 
@@ -76,8 +111,33 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Why choose us */}
+      {/* Types d'installations section */}
       <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-airse-navy mb-4">Nos Types d'Installations</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Découvrez notre gamme de solutions adaptées à tous vos besoins en climatisation et ventilation.
+            </p>
+          </div>
+          
+          <div className="space-y-16">
+            {installationTypes.map((installation, index) => (
+              <InstallationTypeCard 
+                key={index}
+                title={installation.title}
+                description={installation.description}
+                imageSrc={installation.imageSrc}
+                imageAlt={installation.imageAlt}
+                reversed={index % 2 !== 0}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Why choose us */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
