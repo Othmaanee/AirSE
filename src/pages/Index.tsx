@@ -33,33 +33,33 @@ const Index = () => {
   const installationTypes = [
     {
       title: "Bi-split",
-      description: "Solution idéale pour climatiser deux pièces distinctes avec une seule unité extérieure, optimisant l'espace et réduisant les coûts d'installation.",
-      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
-      imageAlt: "Installation bi-split"
+      description: "Solution idéale pour climatiser deux pièces avec un seul groupe extérieur. Parfait pour optimiser l'espace et réduire les coûts.",
+      imageSrc: "/lovable-uploads/4a5c29e4-380a-496f-9bf7-954f9e5f5d9d.png", // Image bi-split
+      imageAlt: "Installation bi-split dans un salon de coiffure"
     },
     {
       title: "Mono-split",
-      description: "Système simple et efficace pour climatiser une pièce unique, offrant un contrôle précis de la température et une installation rapide.",
-      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
-      imageAlt: "Installation mono-split"
+      description: "Installation simple pour une seule pièce, idéale pour un confort immédiat et une efficacité énergétique maximale.",
+      imageSrc: "/lovable-uploads/3a2ebfb7-1cbb-4f61-80e4-8253369f3bb3.png", // Image mono-split
+      imageAlt: "Installation mono-split dans une salle à manger moderne"
     },
     {
       title: "Installation gainable avec système Airzone",
-      description: "Solution discrète et performante permettant de climatiser plusieurs pièces avec un seul système, tout en offrant un contrôle individuel de la température par zone.",
-      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
-      imageAlt: "Installation gainable avec système Airzone"
+      description: "Discrétion totale grâce à un réseau de gaines caché dans les plafonds, combiné au système Airzone pour un contrôle pièce par pièce.",
+      imageSrc: "/lovable-uploads/f8788bae-d12e-45b4-ab07-95f26497a74a.png", // Image gainable
+      imageAlt: "Installation gainable avec système Airzone au plafond"
     },
     {
       title: "Système VRV",
-      description: "Technologie avancée de climatisation adaptée aux grands espaces, offrant une efficacité énergétique supérieure et une flexibilité d'installation incomparable.",
-      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
-      imageAlt: "Système VRV"
+      description: "Technologie avancée pour gérer plusieurs unités intérieures via un seul système centralisé. Idéal pour les bâtiments de grande taille.",
+      imageSrc: "/lovable-uploads/fee91f0c-c812-4f8a-ba36-381d551cb501.png", // Image système VRV
+      imageAlt: "Système VRV extérieur pour grand bâtiment commercial"
     },
     {
       title: "Installation de système VRV avec plusieurs cassettes",
-      description: "Solution complète pour les grands espaces professionnels, permettant un contrôle précis de la température dans différentes zones avec un design discret au plafond.",
-      imageSrc: "/placeholder.svg", // à remplacer par l'image fournie
-      imageAlt: "Installation de système VRV avec plusieurs cassettes"
+      description: "Solution professionnelle avec plusieurs cassettes encastrées au plafond, parfaite pour les bureaux et commerces.",
+      imageSrc: "/lovable-uploads/a20bd23e-6f41-4196-8807-9b7832bbb72f.png", // Image VRV avec cassettes
+      imageAlt: "Installation de système VRV avec plusieurs cassettes au plafond"
     },
   ];
 
