@@ -7,17 +7,23 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   
-  // Function to handle smooth scrolling
+  // Function to handle smooth scrolling with offset
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
     // Only apply smooth scroll for internal links
     if (location.pathname === to || (location.pathname === "/" && to === "/")) {
       e.preventDefault();
       
-      // Scroll smoothly to top
+      // Add offset for header height (adjust this value as needed)
+      const headerOffset = 80; // Approximate height of the header
+      
+      // Scroll smoothly to top with offset
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
+    } else {
+      // For navigation to a different page, store the scroll position preference
+      sessionStorage.setItem('scrollToTop', 'true');
     }
   };
   
