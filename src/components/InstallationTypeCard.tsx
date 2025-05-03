@@ -23,12 +23,12 @@ const InstallationTypeCard = ({
       <Card className="overflow-hidden border-none shadow-lg">
         <CardContent className="p-0">
           <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center`}>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 overflow-hidden">
               <AspectRatio ratio={16 / 9} className="bg-muted">
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   loading="lazy"
                 />
               </AspectRatio>
