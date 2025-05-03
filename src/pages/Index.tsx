@@ -40,8 +40,8 @@ const Index = () => {
     {
       title: "Mono-split",
       description: "Installation simple pour une seule pièce, idéale pour un confort immédiat et une efficacité énergétique maximale.",
-      imageSrc: "/lovable-uploads/6420b950-d1d7-4188-9bce-f88e2d64a319.png", // Image mono-split mise à jour
-      imageAlt: "Installation mono-split avec climatiseur mural dans une salle à manger moderne"
+      imageSrc: "/lovable-uploads/6315c22b-d530-4084-8350-cfe48978ad2d.png", // Nouvelle image mono-split
+      imageAlt: "Installation mono-split avec mur en pierre et table en bois"
     },
     {
       title: "Installation gainable avec système Airzone",
