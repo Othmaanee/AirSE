@@ -1,9 +1,25 @@
 
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  
+  // Function to handle smooth scrolling
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    // Only apply smooth scroll for internal links
+    if (location.pathname === to || (location.pathname === "/" && to === "/")) {
+      e.preventDefault();
+      
+      // Scroll smoothly to top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  };
   
   return (
     <footer className="bg-airse-navy text-white">
@@ -61,19 +77,49 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Liens rapides</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-airse-light-blue transition-colors">Accueil</Link>
+                <Link 
+                  to="/" 
+                  className="hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/")}
+                >
+                  Accueil
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-airse-light-blue transition-colors">Nos Services</Link>
+                <Link 
+                  to="/services" 
+                  className="hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/services")}
+                >
+                  Nos Services
+                </Link>
               </li>
               <li>
-                <Link to="/produits" className="hover:text-airse-light-blue transition-colors">Nos Produits</Link>
+                <Link 
+                  to="/produits" 
+                  className="hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/produits")}
+                >
+                  Nos Produits
+                </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-airse-light-blue transition-colors">Contact</Link>
+                <Link 
+                  to="/contact" 
+                  className="hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/contact")}
+                >
+                  Contact
+                </Link>
               </li>
               <li>
-                <Link to="/mentions-legales" className="hover:text-airse-light-blue transition-colors">Mentions Légales</Link>
+                <Link 
+                  to="/mentions-legales" 
+                  className="hover:text-airse-light-blue transition-colors"
+                  onClick={(e) => handleNavigation(e, "/mentions-legales")}
+                >
+                  Mentions Légales
+                </Link>
               </li>
             </ul>
           </div>
