@@ -1,31 +1,80 @@
 
 import { useEffect, useRef } from 'react';
 
-const GoogleMap = () => {
+interface GoogleMapProps {
+  address?: string;
+  zoom?: number;
+}
+
+const GoogleMap = ({ address = "Saint-Étienne, Loire", zoom = 14 }: GoogleMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Cette fonction serait remplacée par une vraie intégration de Google Maps
-    // Pour l'instant, nous simulons une carte avec une image statique
-    if (mapRef.current) {
-      mapRef.current.innerHTML = `
-        <div class="flex items-center justify-center h-full bg-gray-200 rounded-lg">
-          <div class="text-center p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2 text-gray-600">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <p class="text-gray-600">Carte Google Maps à intégrer.</p>
-            <p class="text-sm text-gray-500 mt-1">Saint-Étienne, Loire</p>
-          </div>
-        </div>
-      `;
-    }
-  }, []);
+    // Fonction pour charger et initialiser la carte Google Maps
+    const initMap = () => {
+      // Vérifier si l'API Google Maps est déjà chargée
+      if (window.google && window.google.maps) {
+        createMap();
+      } else {
+        // Sinon, créer un script et charger l'API
+        const googleMapScript = document.createElement('script');
+        googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZg2Es_GrQHZf_52j2-xZ3cTfBCR0HII&callback=initGoogleMap`;
+        googleMapScript.async = true;
+        googleMapScript.defer = true;
+        window.initGoogleMap = createMap;
+        document.head.appendChild(googleMapScript);
+      }
+    };
+
+    // Fonction pour créer la carte une fois l'API chargée
+    const createMap = () => {
+      if (!mapRef.current) return;
+      
+      // Coordonnées de Saint-Étienne
+      const stEtienne = { lat: 45.439695, lng: 4.3871779 };
+      
+      // Créer la carte
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: stEtienne,
+        zoom: zoom,
+        mapTypeControl: true,
+        streetViewControl: true,
+        fullscreenControl: true,
+        zoomControl: true,
+      });
+      
+      // Ajouter un marqueur
+      new window.google.maps.Marker({
+        position: stEtienne,
+        map: map,
+        title: address,
+        animation: window.google.maps.Animation.DROP,
+      });
+    };
+    
+    // Initialiser la carte
+    initMap();
+    
+    // Cleanup function
+    return () => {
+      // Supprimer la callback globale quand le composant est démonté
+      if (window.initGoogleMap) {
+        delete window.initGoogleMap;
+      }
+    };
+  }, [address, zoom]);
   
   return (
     <div ref={mapRef} className="w-full h-[400px] rounded-lg shadow-md"></div>
   );
 };
+
+// Ajouter la déclaration pour TypeScript
+declare global {
+  interface Window {
+    google: any;
+    initGoogleMap: () => void;
+  }
+}
 
 export default GoogleMap;
