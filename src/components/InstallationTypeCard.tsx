@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface InstallationTypeCardProps {
@@ -24,14 +23,14 @@ const InstallationTypeCard = ({
         <CardContent className="p-0">
           <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center`}>
             <div className="w-full lg:w-1/2">
-              <AspectRatio ratio={16 / 9} className="bg-muted">
+              <div className="relative" style={{height: "400px"}}>
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   loading="lazy"
                 />
-              </AspectRatio>
+              </div>
             </div>
             <div className="w-full lg:w-1/2 p-6 md:p-8 lg:p-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-airse-navy">{title}</h3>
