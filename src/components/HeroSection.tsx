@@ -16,13 +16,13 @@ const HeroSection = () => {
               Spécialiste de l'installation, l'entretien et la réparation de systèmes de climatisation et ventilation pour le résidentiel, le commercial et le tertiaire à Saint-Étienne et sa région.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
+              <Link to="/contact" className="smooth-scroll">
                 <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                   Demander un devis gratuit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/services">
+              <Link to="/services" className="smooth-scroll">
                 <Button size="lg" variant="outline" className="border-airse-navy text-airse-navy hover:bg-airse-navy hover:text-white">
                   Découvrir nos services
                 </Button>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="relative">
               <img 
                 src="/lovable-uploads/b4e3318f-8492-49bd-9da1-fd61a4393243.png" 
-                alt="Air SE - Chauffage, ventilation, climatisation" 
+                alt="Climatisation et ventilation professionnelles" 
                 className="w-full md:w-4/5 lg:w-full max-w-md animate-float" 
               />
             </div>

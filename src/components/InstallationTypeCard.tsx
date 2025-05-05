@@ -9,6 +9,7 @@ interface InstallationTypeCardProps {
   imageSrc: string;
   imageAlt: string;
   reversed?: boolean;
+  objectPosition?: string;
 }
 
 const InstallationTypeCard = ({
@@ -17,6 +18,7 @@ const InstallationTypeCard = ({
   imageSrc,
   imageAlt,
   reversed = false,
+  objectPosition = "center",
 }: InstallationTypeCardProps) => {
   return (
     <div className="relative">
@@ -29,6 +31,7 @@ const InstallationTypeCard = ({
                   src={imageSrc}
                   alt={imageAlt}
                   className="h-full w-full object-cover"
+                  style={{ objectPosition }}
                   loading="lazy"
                 />
               </AspectRatio>
