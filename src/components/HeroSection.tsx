@@ -37,7 +37,7 @@ const HeroSection = () => {
                 alt="Air SE" 
                 className="w-48 md:w-64 lg:w-80 animate-float" 
               />
-              <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl -z-10"></div>
+              {/* Suppression du texte "Air SE" qui apparaissait isolé */}
             </div>
           </div>
         </div>
