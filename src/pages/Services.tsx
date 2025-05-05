@@ -1,9 +1,11 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThermometerSnowflake, Fan, Settings, Wrench, ClipboardList, Calendar, ArrowRight } from "lucide-react";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const Services = () => {
+  const { handleSmoothNavigation } = useSmoothScroll();
+
   const climatisationServices = [
     {
       title: "Installation",
@@ -53,14 +55,14 @@ const Services = () => {
   return (
     <div>
       {/* Hero section */}
-      <section className="bg-gradient-to-r from-airse-yellow to-airse-orange py-16">
+      <section className="bg-gradient-to-r from-airse-yellow to-airse-orange py-16" id="services-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-airse-navy mb-6">Nos Services</h1>
             <p className="text-lg text-gray-800 mb-8">
               Air SE propose une gamme complète de services en climatisation et ventilation pour assurer votre confort thermique et la qualité de votre air intérieur.
             </p>
-            <Link to="/contact">
+            <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
               <Button size="lg" className="bg-airse-navy hover:bg-airse-dark-blue text-white">
                 Demander un devis gratuit
               </Button>
@@ -272,7 +274,7 @@ const Services = () => {
                     </span>
                   </li>
                 </ul>
-                <Link to="/contact">
+                <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
                   <Button className="w-full bg-airse-navy hover:bg-airse-dark-blue text-white">
                     Demander un audit de ventilation
                   </Button>
@@ -292,7 +294,7 @@ const Services = () => {
           <p className="text-lg mb-8 max-w-3xl mx-auto">
             Contactez-nous pour discuter de vos besoins en climatisation et ventilation. Nos experts sont là pour vous conseiller et vous proposer les solutions les plus adaptées.
           </p>
-          <Link to="/contact">
+          <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
             <Button size="lg" className="bg-white hover:bg-gray-100 text-airse-blue">
               Contactez-nous maintenant
               <ArrowRight className="ml-2 h-5 w-5" />

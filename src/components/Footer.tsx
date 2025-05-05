@@ -1,31 +1,11 @@
 
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const location = useLocation();
-  
-  // Function to handle smooth scrolling with offset
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
-    // Only apply smooth scroll for internal links
-    if (location.pathname === to || (location.pathname === "/" && to === "/")) {
-      e.preventDefault();
-      
-      // Add offset for header height (adjust this value as needed)
-      const headerOffset = 80; // Approximate height of the header
-      
-      // Scroll smoothly to top with offset
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    } else {
-      // For navigation to a different page, store the scroll position preference
-      sessionStorage.setItem('scrollToTop', 'true');
-    }
-  };
+  const { handleSmoothNavigation } = useSmoothScroll();
   
   return (
     <footer className="bg-airse-navy text-white">
@@ -86,7 +66,7 @@ const Footer = () => {
                 <Link 
                   to="/" 
                   className="hover:text-airse-light-blue transition-colors"
-                  onClick={(e) => handleNavigation(e, "/")}
+                  onClick={(e) => handleSmoothNavigation(e, "/")}
                 >
                   Accueil
                 </Link>
@@ -95,7 +75,7 @@ const Footer = () => {
                 <Link 
                   to="/services" 
                   className="hover:text-airse-light-blue transition-colors"
-                  onClick={(e) => handleNavigation(e, "/services")}
+                  onClick={(e) => handleSmoothNavigation(e, "/services")}
                 >
                   Nos Services
                 </Link>
@@ -104,7 +84,7 @@ const Footer = () => {
                 <Link 
                   to="/produits" 
                   className="hover:text-airse-light-blue transition-colors"
-                  onClick={(e) => handleNavigation(e, "/produits")}
+                  onClick={(e) => handleSmoothNavigation(e, "/produits")}
                 >
                   Nos Produits
                 </Link>
@@ -113,7 +93,7 @@ const Footer = () => {
                 <Link 
                   to="/contact" 
                   className="hover:text-airse-light-blue transition-colors"
-                  onClick={(e) => handleNavigation(e, "/contact")}
+                  onClick={(e) => handleSmoothNavigation(e, "/contact")}
                 >
                   Contact
                 </Link>
@@ -122,7 +102,7 @@ const Footer = () => {
                 <Link 
                   to="/mentions-legales" 
                   className="hover:text-airse-light-blue transition-colors"
-                  onClick={(e) => handleNavigation(e, "/mentions-legales")}
+                  onClick={(e) => handleSmoothNavigation(e, "/mentions-legales")}
                 >
                   Mentions Légales
                 </Link>

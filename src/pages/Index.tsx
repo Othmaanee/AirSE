@@ -5,8 +5,11 @@ import InstallationTypeCard from "../components/InstallationTypeCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Airplay, Fan, ThermometerSnowflake, CheckCircle, ArrowRight } from "lucide-react";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const Index = () => {
+  const { handleSmoothNavigation } = useSmoothScroll();
+  
   const benefits = [
     {
       title: "Expertise professionnelle",
@@ -68,7 +71,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Services section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" id="services-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-airse-navy mb-4">Nos Services</h2>
@@ -101,7 +104,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/services">
+            <Link to="/services" onClick={(e) => handleSmoothNavigation(e, "/services")}>
               <Button className="bg-airse-navy hover:bg-airse-dark-blue text-white">
                 Voir tous nos services
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -112,7 +115,7 @@ const Index = () => {
       </section>
       
       {/* Types d'installations section */}
-      <section className="py-16">
+      <section className="py-16" id="installations-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-airse-navy mb-4">Nos Types d'Installations</h2>
@@ -137,7 +140,7 @@ const Index = () => {
       </section>
       
       {/* Why choose us */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" id="why-choose-us-section">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -159,7 +162,7 @@ const Index = () => {
               </div>
               
               <div className="mt-10">
-                <Link to="/contact">
+                <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
                   <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                     Contactez-nous
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -192,7 +195,7 @@ const Index = () => {
                     <span>Conseils techniques personnalisés</span>
                   </li>
                 </ul>
-                <Link to="/contact">
+                <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
                   <Button className="w-full bg-airse-navy hover:bg-airse-dark-blue text-white">
                     Demander un devis
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -205,7 +208,7 @@ const Index = () => {
       </section>
       
       {/* CTA section */}
-      <section className="py-16 bg-airse-navy text-white">
+      <section className="py-16 bg-airse-navy text-white" id="cta-section">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Prêt à améliorer votre confort climatique ?
@@ -214,12 +217,12 @@ const Index = () => {
             Nos experts sont disponibles pour vous conseiller et vous accompagner dans tous vos projets de climatisation et ventilation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
               <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                 Nous contacter
               </Button>
             </Link>
-            <Link to="/services">
+            <Link to="/services" onClick={(e) => handleSmoothNavigation(e, "/services")}>
               <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white hover:text-airse-navy">
                 En savoir plus
               </Button>

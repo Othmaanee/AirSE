@@ -2,8 +2,11 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 
 const HeroSection = () => {
+  const { handleSmoothNavigation } = useSmoothScroll();
+  
   return (
     <div className="relative bg-gradient-to-b from-airse-yellow via-white to-airse-light-blue">
       <div className="container mx-auto px-4 py-16 lg:py-24">
@@ -16,13 +19,13 @@ const HeroSection = () => {
               Spécialiste de l'installation, l'entretien et la réparation de systèmes de climatisation et ventilation pour le résidentiel, le commercial et le tertiaire à Saint-Étienne et sa région.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
+              <Link to="/contact" onClick={(e) => handleSmoothNavigation(e, "/contact")}>
                 <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                   Demander un devis gratuit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/services">
+              <Link to="/services" onClick={(e) => handleSmoothNavigation(e, "/services")}>
                 <Button size="lg" variant="outline" className="border-airse-navy text-airse-navy hover:bg-airse-navy hover:text-white">
                   Découvrir nos services
                 </Button>
