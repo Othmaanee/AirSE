@@ -1,3 +1,4 @@
+
 import HeroSection from "../components/HeroSection";
 import ServiceCard from "../components/ServiceCard";
 import InstallationTypeCard from "../components/InstallationTypeCard";
@@ -39,8 +40,8 @@ const Index = () => {
     {
       title: "Mono-split",
       description: "Installation simple pour une seule pièce, idéale pour un confort immédiat et une efficacité énergétique maximale.",
-      imageSrc: "/lovable-uploads/4d42ff80-abd0-47f4-a3dc-2811e3c38636.png", // Nouvelle image mono-split
-      imageAlt: "Installation mono-split avec climatiseur mural sur mur blanc et fond en bois"
+      imageSrc: "/lovable-uploads/a2080f73-6186-41e7-a869-9fb1f1305887.png", // Nouvelle image mono-split
+      imageAlt: "Installation mono-split avec climatiseur mural, plante et mur en bois"
     },
     {
       title: "Installation gainable avec système Airzone",
