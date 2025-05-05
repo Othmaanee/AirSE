@@ -37,7 +37,6 @@ const HeroSection = () => {
                 alt="Air SE" 
                 className="w-48 md:w-64 lg:w-80 animate-float" 
               />
-              {/* Suppression du texte "Air SE" qui apparaissait isolé */}
             </div>
           </div>
         </div>
