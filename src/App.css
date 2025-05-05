@@ -40,18 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* Styles pour le défilement fluide */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Classe pour le défilement fluide */
-.smooth-scroll {
-  cursor: pointer;
-}
-
-/* Ajustement pour les éléments ancrés pour compenser la hauteur de la barre de navigation */
-:target {
-  scroll-margin-top: 80px; /* Hauteur approximative du header fixe */
-}

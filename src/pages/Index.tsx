@@ -34,32 +34,31 @@ const Index = () => {
     {
       title: "Bi-split",
       description: "Solution idéale pour climatiser deux pièces avec un seul groupe extérieur. Parfait pour optimiser l'espace et réduire les coûts.",
-      imageSrc: "/lovable-uploads/4a5c29e4-380a-496f-9bf7-954f9e5f5d9d.png",
+      imageSrc: "/lovable-uploads/4a5c29e4-380a-496f-9bf7-954f9e5f5d9d.png", // Image bi-split
       imageAlt: "Installation bi-split dans un salon de coiffure"
     },
     {
       title: "Mono-split",
       description: "Installation simple pour une seule pièce, idéale pour un confort immédiat et une efficacité énergétique maximale.",
-      imageSrc: "/lovable-uploads/a2080f73-6186-41e7-a869-9fb1f1305887.png",
-      imageAlt: "Installation mono-split avec climatiseur mural, plante et mur en bois",
-      objectPosition: "center top"
+      imageSrc: "/lovable-uploads/a2080f73-6186-41e7-a869-9fb1f1305887.png", // Nouvelle image mono-split
+      imageAlt: "Installation mono-split avec climatiseur mural, plante et mur en bois"
     },
     {
       title: "Installation gainable avec système Airzone",
       description: "Discrétion totale grâce à un réseau de gaines caché dans les plafonds, combiné au système Airzone pour un contrôle pièce par pièce.",
-      imageSrc: "/lovable-uploads/f8788bae-d12e-45b4-ab07-95f26497a74a.png",
+      imageSrc: "/lovable-uploads/f8788bae-d12e-45b4-ab07-95f26497a74a.png", // Image gainable
       imageAlt: "Installation gainable avec système Airzone au plafond"
     },
     {
       title: "Système VRV",
       description: "Technologie avancée pour gérer plusieurs unités intérieures via un seul système centralisé. Idéal pour les bâtiments de grande taille.",
-      imageSrc: "/lovable-uploads/fee91f0c-c812-4f8a-ba36-381d551cb501.png",
+      imageSrc: "/lovable-uploads/fee91f0c-c812-4f8a-ba36-381d551cb501.png", // Image système VRV
       imageAlt: "Système VRV extérieur pour grand bâtiment commercial"
     },
     {
       title: "Installation de système VRV avec plusieurs cassettes",
       description: "Solution professionnelle avec plusieurs cassettes encastrées au plafond, parfaite pour les bureaux et commerces.",
-      imageSrc: "/lovable-uploads/a20bd23e-6f41-4196-8807-9b7832bbb72f.png",
+      imageSrc: "/lovable-uploads/a20bd23e-6f41-4196-8807-9b7832bbb72f.png", // Image VRV avec cassettes
       imageAlt: "Installation de système VRV avec plusieurs cassettes au plafond"
     },
   ];
@@ -102,7 +101,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/services" className="smooth-scroll">
+            <Link to="/services">
               <Button className="bg-airse-navy hover:bg-airse-dark-blue text-white">
                 Voir tous nos services
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -131,7 +130,6 @@ const Index = () => {
                 imageSrc={installation.imageSrc}
                 imageAlt={installation.imageAlt}
                 reversed={index % 2 !== 0}
-                objectPosition={installation.objectPosition}
               />
             ))}
           </div>
@@ -161,7 +159,7 @@ const Index = () => {
               </div>
               
               <div className="mt-10">
-                <Link to="/contact" className="smooth-scroll">
+                <Link to="/contact">
                   <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                     Contactez-nous
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -194,7 +192,7 @@ const Index = () => {
                     <span>Conseils techniques personnalisés</span>
                   </li>
                 </ul>
-                <Link to="/contact" className="smooth-scroll">
+                <Link to="/contact">
                   <Button className="w-full bg-airse-navy hover:bg-airse-dark-blue text-white">
                     Demander un devis
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -216,12 +214,12 @@ const Index = () => {
             Nos experts sont disponibles pour vous conseiller et vous accompagner dans tous vos projets de climatisation et ventilation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="smooth-scroll">
+            <Link to="/contact">
               <Button size="lg" className="bg-airse-light-blue hover:bg-airse-blue text-white">
                 Nous contacter
               </Button>
             </Link>
-            <Link to="/services" className="smooth-scroll">
+            <Link to="/services">
               <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white hover:text-airse-navy">
                 En savoir plus
               </Button>
