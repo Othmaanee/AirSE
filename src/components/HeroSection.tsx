@@ -33,9 +33,9 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
               <img 
-                src="/logo-square.png" 
-                alt="Air SE" 
-                className="w-48 md:w-64 lg:w-80 animate-float" 
+                src="/lovable-uploads/b4e3318f-8492-49bd-9da1-fd61a4393243.png" 
+                alt="Air SE - Chauffage, ventilation, climatisation" 
+                className="w-full md:w-4/5 lg:w-full max-w-md animate-float" 
               />
             </div>
           </div>
