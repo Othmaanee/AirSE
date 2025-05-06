@@ -16,15 +16,19 @@ const MentionsLegales = () => {
                 <li>Siège social : Saint-Étienne, Loire</li>
                 <li>Téléphone : 06 52 45 17 15</li>
                 <li>Email : contact.airse@gmail.com</li>
-                <li>N° SIRET : [À compléter]</li>
-                <li>Directeur de la publication : [À compléter]</li>
+                <li>N° SIRET : 98133746200015</li>
+                <li>Directeur de la publication : Sofiane El Arrassi</li>
               </ul>
             </section>
             
             <section>
               <h2 className="text-2xl font-semibold text-airse-navy mb-4">2. Hébergement</h2>
-              <p className="text-gray-700">
-                Ce site est hébergé par [Nom de l'hébergeur], [Adresse de l'hébergeur], [Téléphone de l'hébergeur].
+              <p className="text-gray-700 mb-4">
+                Ce site est hébergé par OVHcloud, 2 rue Kellermann, 59100 Roubaix, France. Téléphone : 1007 (depuis la France).
+              </p>
+              <p className="text-gray-700 mb-4">
+                Développement & réalisation du site : Othmane Tadjouri – Développeur web indépendant<br />
+                Contact : tadjouriothmane@gmail.com
               </p>
             </section>
             

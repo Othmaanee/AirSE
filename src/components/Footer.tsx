@@ -116,6 +116,9 @@ const Footer = () => {
           <p className="mt-1">
             Spécialiste en installation climatisation et ventilation à Saint-Étienne et sa région.
           </p>
+          <p className="mt-2 text-gray-400">
+            Site réalisé par <a href="mailto:tadjouriothmane@gmail.com" className="hover:text-airse-light-blue transition-colors">Othmane Tadjouri</a>
+          </p>
         </div>
       </div>
     </footer>
