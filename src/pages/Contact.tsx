@@ -114,6 +114,24 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* AirSE Google Map */}
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="rounded-lg shadow-md overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.9799856357993!2d4.391308976639395!3d45.45611593423505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5a8ab3c4744e3%3A0x2b1dc3aa4c2789cf!2sAirSE!5e0!3m2!1sfr!2sfr!4v1715000000000!5m2!1sfr!2sfr"
+              width="100%" 
+              height="350" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Maps - AirSE Saint-Étienne"
+            ></iframe>
+          </div>
+        </div>
+      </section>
       
       {/* Map section */}
       <section className="py-16 bg-gray-50">

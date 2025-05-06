@@ -21,12 +21,7 @@ const Services = () => {
       title: "Réparation",
       description: "Diagnostic et réparation rapide de tous types de pannes sur vos systèmes de climatisation.",
       icon: <Wrench className="h-8 w-8 text-airse-light-blue" />,
-    },
-    {
-      title: "Contrats d'entretien",
-      description: "Programmes d'entretien régulier pour maintenir votre équipement en parfait état de fonctionnement.",
-      icon: <ClipboardList className="h-8 w-8 text-airse-light-blue" />,
-    },
+    }
   ];
   
   const ventilationServices = [
@@ -82,7 +77,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {climatisationServices.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
                 <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

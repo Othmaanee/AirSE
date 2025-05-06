@@ -1,4 +1,3 @@
-
 import HeroSection from "../components/HeroSection";
 import ServiceCard from "../components/ServiceCard";
 import InstallationTypeCard from "../components/InstallationTypeCard";
@@ -43,19 +42,19 @@ const Index = () => {
     {
       title: "Mono-split",
       description: "Installation simple pour une seule pièce, idéale pour un confort immédiat et une efficacité énergétique maximale.",
-      imageSrc: "/lovable-uploads/a2080f73-6186-41e7-a869-9fb1f1305887.png", // Nouvelle image mono-split
-      imageAlt: "Installation mono-split avec climatiseur mural, plante et mur en bois"
+      imageSrc: "/lovable-uploads/035a1bde-7fce-4611-940d-82c33d8f00d0.png", // Nouvelle image mono-split
+      imageAlt: "Installation mono-split mural blanc avec affichage digital"
     },
     {
       title: "Installation gainable avec système Airzone",
       description: "Discrétion totale grâce à un réseau de gaines caché dans les plafonds, combiné au système Airzone pour un contrôle pièce par pièce.",
-      imageSrc: "/lovable-uploads/f8788bae-d12e-45b4-ab07-95f26497a74a.png", // Image gainable
+      imageSrc: "/lovable-uploads/fee91f0c-c812-4f8a-ba36-381d551cb501.png", // Inverser avec VRV
       imageAlt: "Installation gainable avec système Airzone au plafond"
     },
     {
       title: "Système VRV",
       description: "Technologie avancée pour gérer plusieurs unités intérieures via un seul système centralisé. Idéal pour les bâtiments de grande taille.",
-      imageSrc: "/lovable-uploads/fee91f0c-c812-4f8a-ba36-381d551cb501.png", // Image système VRV
+      imageSrc: "/lovable-uploads/f8788bae-d12e-45b4-ab07-95f26497a74a.png", // Inverser avec gainable
       imageAlt: "Système VRV extérieur pour grand bâtiment commercial"
     },
     {
