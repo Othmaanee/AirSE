@@ -22,29 +22,54 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simuler l'envoi du formulaire
-    setTimeout(() => {
+    try {
+      // Utilisation de FormSubmit pour envoyer le formulaire par email
+      const response = await fetch("https://formsubmit.co/contact.airse@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `Nouveau message depuis le site - ${formData.subject}`,
+          _captcha: "false", // Désactiver le captcha (optionnel)
+        }),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Formulaire envoyé avec succès",
+          description: "Nous vous contacterons dans les plus brefs délais.",
+          duration: 5000,
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        throw new Error("Échec de l'envoi du formulaire");
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
       toast({
-        title: "Formulaire envoyé avec succès",
-        description: "Nous vous contacterons dans les plus brefs délais.",
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer ultérieurement.",
+        variant: "destructive",
         duration: 5000,
       });
-      
-      // Réinitialiser le formulaire
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-      
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
