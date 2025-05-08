@@ -1,0 +1,16 @@
+
+# Netlify configuration file
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Specify the Go version
+[build.environment]
+  GO_VERSION = "1.21"
+
+# Handle SPA routing for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
